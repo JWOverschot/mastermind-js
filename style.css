@@ -19,4 +19,24 @@
 	background-color: darkgrey;
 	border-radius: 50%;
 	margin: 2px;
+	border: 1px solid black;
+}
+
+#pin-red {
+	background-color: red;
+}
+#pin-black {
+	background-color: black;
+}
+#pin-white {
+	background-color: white;
+}
+#pin-blue {
+	background-color: blue;
+}
+#pin-green {
+	background-color: green;
+}
+#pin-yellow {
+	background-color: yellow;
 }
