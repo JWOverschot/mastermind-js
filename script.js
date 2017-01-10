@@ -10,6 +10,7 @@ function codeGenarator() {
 	console.log(code);
 }
 var codePlayer = [];
+var key = [];
 function colorInArray(n) {
 	var pin = document.getElementById("pin-red");
 	
@@ -35,12 +36,18 @@ function colorInArray(n) {
 	}
 
 	if (codePlayer.length == 4) {
-		if (codePlayer.includes(code[0, 1, 2 , 3])) {
-			console.log("hallo");
+		for (var i = 0; i <= 3; i++) {
+			if (codePlayer.includes(code[i])) {
+				key.push("white");
+			}
+			else {
+				console.log("bye");
+			}
 		}
-		else {
-			console.log("bye");
-		}
+		document.getElementById("spin12-1").style.backgroundColor = key[0];
+		document.getElementById("spin12-2").style.backgroundColor = key[1];
+		document.getElementById("spin12-3").style.backgroundColor = key[2];
+		document.getElementById("spin12-4").style.backgroundColor = key[3];
 	}
 	document.getElementById("pin12-1").style.backgroundColor = codePlayer[0];
 	document.getElementById("pin12-2").style.backgroundColor = codePlayer[1];
