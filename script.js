@@ -32,5 +32,9 @@ function colorInArray(n) {
 			codePlayer.push("yellow");
 		}
 	}
+	document.getElementById("pin12-1").style.backgroundColor = codePlayer[0];
+	document.getElementById("pin12-2").style.backgroundColor = codePlayer[1];
+	document.getElementById("pin12-3").style.backgroundColor = codePlayer[2];
+	document.getElementById("pin12-4").style.backgroundColor = codePlayer[3];
 	console.log(codePlayer);
 }
