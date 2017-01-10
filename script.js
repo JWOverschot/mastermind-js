@@ -1,6 +1,7 @@
+var code = [];
 function codeGenarator() {
 	var colors = ["red", "black", "white", "blue", "green", "yellow"];
-	var code = [];
+	
 
 	for (var i = 0; i <= 3; i++) {
 		var random = Math.floor((Math.random() * 5));
@@ -30,6 +31,15 @@ function colorInArray(n) {
 		}
 		else if (n == "yellow") {
 			codePlayer.push("yellow");
+		}
+	}
+
+	if (codePlayer.length == 4) {
+		if (codePlayer.includes(code[0, 1, 2 , 3])) {
+			console.log("hallo");
+		}
+		else {
+			console.log("bye");
 		}
 	}
 	document.getElementById("pin12-1").style.backgroundColor = codePlayer[0];
