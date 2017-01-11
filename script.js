@@ -2,6 +2,7 @@ var code = [];
 var codePlayer = [];
 var keyWhite = [];
 var keyBlack = [];
+var a = 12;
 
 function codeGenarator() {
 	var colors = ["red", "black", "white", "blue", "green", "yellow"];
@@ -42,32 +43,25 @@ function colorInArray(n) {
 			if (codePlayer.includes(code[i])) {
 				keyWhite.push("white");
 			}
-			else {
-				console.log("bye");
-			}
 		}
 		for (var i = 0; i <= 3; i++) {
 			if (code[i] === codePlayer[i]) {
 				keyBlack.push("black");
-				console.log("haha");
-			}
-			else {
-				console.log("goodbye");
 			}
 		}
-		document.getElementById("spin12-1").style.backgroundColor = keyWhite[0];
-		document.getElementById("spin12-2").style.backgroundColor = keyWhite[1];
-		document.getElementById("spin12-3").style.backgroundColor = keyWhite[2];
-		document.getElementById("spin12-4").style.backgroundColor = keyWhite[3];
-
-		document.getElementById("spin12-1").style.backgroundColor = keyBlack[0];
-		document.getElementById("spin12-2").style.backgroundColor = keyBlack[1];
-		document.getElementById("spin12-3").style.backgroundColor = keyBlack[2];
-		document.getElementById("spin12-4").style.backgroundColor = keyBlack[3];
+		for (var i = 0; i <= 3; i++) {
+			document.getElementById("spin"+ a +"-" + i).style.backgroundColor = keyWhite[i];
+		}
+		for (var i = 0; i <= 3; i++) {
+			document.getElementById("spin"+ a +"-" + i).style.backgroundColor = keyBlack[i];
+		}
+		a--;
+		codePlayer = [];
+		keyWhite = [];
+		keyBlack = [];
 	}
-	document.getElementById("pin12-1").style.backgroundColor = codePlayer[0];
-	document.getElementById("pin12-2").style.backgroundColor = codePlayer[1];
-	document.getElementById("pin12-3").style.backgroundColor = codePlayer[2];
-	document.getElementById("pin12-4").style.backgroundColor = codePlayer[3];
+	for (var i = 0; i <= 3; i++) {
+		document.getElementById("pin"+ a +"-" + i).style.backgroundColor = codePlayer[i];
+	}
 	console.log(codePlayer);
 }
