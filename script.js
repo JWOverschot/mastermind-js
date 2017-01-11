@@ -60,11 +60,13 @@ function colorInArray(n) {
 		}
 		if (keyBlack.length == 4) {
 			document.getElementById("text").innerHTML = "YOU WIN!";
+			document.getElementById("win-lose").style.display = "block";
 			console.log("You Win!!");
 		}
 		if (a == 1) {
 			if (keyBlack.length != 4) {
 				document.getElementById("text").innerHTML = "YOU LOSE!";
+				document.getElementById("win-lose").style.display = "block";
 				console.log("You Lose!!");
 			}
 		}

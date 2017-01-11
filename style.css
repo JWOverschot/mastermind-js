@@ -1,8 +1,26 @@
+body {
+	margin: 0;
+}
 #win-lose {
 	position: fixed;
-	left: 50%;
+	height: 100%;
+	width: 100%;
+	display: none;
+	background-color: #3399ff;
+	top: 0%;
+	animation-name: slide;
+	animation-duration: 2s;
+}
+
+#win-lose h1 {
+	position: fixed;
 	top: 50%;
+	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+h1 {
+	margin-top: 0px;
 }
 
 #board {
@@ -31,6 +49,7 @@
 .pin {
 	height: 50px;
 	width: 50px;
+	cursor: pointer;
 }
 
 .spin {
@@ -62,4 +81,13 @@
 }
 #pin-yellow {
 	background-color: yellow;
+}
+
+@keyframes slide {
+	0% {
+		transform: translate(0%, -100%);
+	}
+	100% {
+    	transform: translate(0%, 0%);
+  	}
 }
