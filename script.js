@@ -15,7 +15,6 @@ function codeGenarator() {
 }
 
 function colorInArray(n) {
-	var pin = document.getElementById("pin-red");
 	
 	if (codePlayer.length < 4) {
 		if (n == "red") {
@@ -38,6 +37,10 @@ function colorInArray(n) {
 		}
 	}
 
+	for (var i = 0; i <= 3; i++) {
+		document.getElementById("pin"+ a +"-" + i).style.backgroundColor = codePlayer[i];
+	}
+
 	if (codePlayer.length == 4) {
 		for (var i = 0; i <= 3; i++) {
 			if (codePlayer.includes(code[i])) {
@@ -55,13 +58,12 @@ function colorInArray(n) {
 		for (var i = 0; i <= 3; i++) {
 			document.getElementById("spin"+ a +"-" + i).style.backgroundColor = keyBlack[i];
 		}
+		if (keyBlack.length == 4) {
+			console.log("You Win!!");
+		}
 		a--;
 		codePlayer = [];
 		keyWhite = [];
 		keyBlack = [];
 	}
-	for (var i = 0; i <= 3; i++) {
-		document.getElementById("pin"+ a +"-" + i).style.backgroundColor = codePlayer[i];
-	}
-	console.log(codePlayer);
 }
