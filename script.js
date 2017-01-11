@@ -59,7 +59,14 @@ function colorInArray(n) {
 			document.getElementById("spin"+ a +"-" + i).style.backgroundColor = keyBlack[i];
 		}
 		if (keyBlack.length == 4) {
+			document.getElementById("text").innerHTML = "YOU WIN!";
 			console.log("You Win!!");
+		}
+		if (a == 1) {
+			if (keyBlack.length != 4) {
+				document.getElementById("text").innerHTML = "YOU LOSE!";
+				console.log("You Lose!!");
+			}
 		}
 		a--;
 		codePlayer = [];

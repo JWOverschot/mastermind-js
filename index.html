@@ -8,6 +8,9 @@
 	<script src="script.js" type="text/javascript"></script>
 </head>
 <body>
+	<div id="win-lose">
+		<h1 id="text"></h1>
+	</div>
 	<h1 onclick="codeGenarator()">Mastermind</h1>
 	<div id="board">
 		<div class="line" id="line1">
@@ -156,12 +159,12 @@
 		</div>
 	</div>
 	<div id="colors">
-		<input onclick="colorInArray(this.value)" class="pin" id="pin-red" type="button" value="red">
-		<input onclick="colorInArray(this.value)" class="pin" id="pin-black" type="button" value="black">
-		<input onclick="colorInArray(this.value)" class="pin" id="pin-white" type="button" value="white">
-		<input onclick="colorInArray(this.value)" class="pin" id="pin-blue" type="button" value="blue">
-		<input onclick="colorInArray(this.value)" class="pin" id="pin-green" type="button" value="green">
-		<input onclick="colorInArray(this.value)" class="pin" id="pin-yellow" type="button" value="yellow">
+		<input onclick="colorInArray('red')" class="pin" id="pin-red" type="button">
+		<input onclick="colorInArray('black')" class="pin" id="pin-black" type="button">
+		<input onclick="colorInArray('white')" class="pin" id="pin-white" type="button">
+		<input onclick="colorInArray('blue')" class="pin" id="pin-blue" type="button">
+		<input onclick="colorInArray('green')" class="pin" id="pin-green" type="button">
+		<input onclick="colorInArray('yellow')" class="pin" id="pin-yellow" type="button">
 	</div>
 </body>
 </html>
