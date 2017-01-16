@@ -47,7 +47,7 @@ body {
 .line {
 	height: 56px;
 	width: 350px;
-	background-color: #d01212;
+	background-color: #0dabff;
 	margin: 5px;
 	display: flex;
 }
@@ -146,5 +146,16 @@ body {
 	100% {
 		top: 93%;
     	transform: rotate(180deg);
+  	}
+}
+
+@keyframes slide-down-arrow {
+	0% {
+		top: 93%;
+		transform: rotate(180deg);
+	}
+	100% {
+		top: 94%;
+    	transform: rotate(0deg);
   	}
 }
