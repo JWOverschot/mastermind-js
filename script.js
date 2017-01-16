@@ -5,6 +5,7 @@ var keyBlack = [];
 var gen_nums = [];
 var a = 12;
 var gameOver = false;
+var arrow = false;
 
 function start() {
 	if (gameOver === true) {
@@ -19,16 +20,30 @@ function start() {
 }
 
 function up() {
-	document.getElementById("win-lose").style.animationName = "slide-up-little";
-	document.getElementById("arrow").style.animationName = "slide-up-arrow";
-
-	setTimeout(function(){
-		document.getElementById("win-lose").style.top = "-90%";
-		document.getElementsByTagName("content")[0].style.display = "none";
-		document.getElementById("arrow").style.top = "3%";
-		document.getElementById("arrow").style.transform = "rotate(180deg)";
-		document.getElementById("board").style.marginTop = "74px";
+	if (arrow === true) {
+		document.getElementById("win-lose").style.animationName = "slide-down-little";
+		document.getElementById("arrow").style.animationName = "slide-down-arrow";
+		document.getElementById("board").style.marginTop = "0px";
+		document.getElementsByTagName("content")[0].style.display = "block";
+		setTimeout(function() {
+			document.getElementById("win-lose").style.top = "0%";
+			document.getElementById("arrow").style.top = "94%";
+			document.getElementById("arrow").style.transform = "rotate(0deg)";
 	}, 1990);
+		arrow = false;
+	}
+	else if (arrow === false) {
+		document.getElementById("win-lose").style.animationName = "slide-up-little";
+		document.getElementById("arrow").style.animationName = "slide-up-arrow";
+		setTimeout(function() {
+			document.getElementById("win-lose").style.top = "-90%";
+			document.getElementsByTagName("content")[0].style.display = "none";
+			document.getElementById("arrow").style.top = "3%";
+			document.getElementById("arrow").style.transform = "rotate(180deg)";
+			document.getElementById("board").style.marginTop = "74px";
+		}, 1990);
+		arrow = true;
+	}
 }
 
 function in_array(array, el) {

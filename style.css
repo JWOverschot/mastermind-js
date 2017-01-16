@@ -138,9 +138,18 @@ body {
   	}
 }
 
+@keyframes slide-down-little {
+	0% {
+		transform: translate(0%, 0%);
+	}
+	100% {
+    	transform: translate(0%, 90%);
+  	}
+}
+
 @keyframes slide-up-arrow {
 	0% {
-		top: 94%;
+		top: 93%;
 		transform: rotate(0deg);
 	}
 	100% {
@@ -155,7 +164,7 @@ body {
 		transform: rotate(180deg);
 	}
 	100% {
-		top: 94%;
+		top: 93%;
     	transform: rotate(0deg);
   	}
 }
