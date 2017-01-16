@@ -123,6 +123,9 @@ function colorInArray(n) {
 				for (var i = 0; i <= 3; i++) {
 					document.getElementById("pinR-" + i).style.backgroundColor = code[i];
 				}
+				document.getElementById("lineR").style.display = "flex";
+				document.getElementById("lineR").style.background = "none";
+				document.getElementById("lineR").style.width = "400px";
 			}
 		}
 		a--;
