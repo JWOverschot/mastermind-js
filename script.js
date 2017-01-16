@@ -2,6 +2,7 @@ var code = [];
 var codePlayer = [];
 var keyWhite = [];
 var keyBlack = [];
+var gen_nums = [];
 var a = 12;
 
 function start() {
@@ -26,12 +27,25 @@ function up() {
 	}, 1990);
 }
 
+function in_array(array, el) {
+	for(var i = 0; i < array.length; i++) 
+		if(array[i] == el) return true;
+	return false;
+}
+
+function get_rand(array) {
+	var rand = array[Math.floor(Math.random()*array.length)];
+	if(!in_array(gen_nums, rand)) {
+		gen_nums.push(rand); 
+		return rand;
+	}
+	return get_rand(array);
+}
+
 function codeGenarator() {
 	var colors = ["red", "black", "white", "blue", "green", "yellow"];
-	code = [];
-	for (var i = 0; i <= 3; i++) {
-		var random = Math.floor((Math.random() * 5));
-		code.push(colors[random]);
+	for(var i = 0; i <= 3; i++) {
+		code.push(get_rand(colors));
 	}
 	console.log(code);
 }
