@@ -4,8 +4,12 @@ var keyWhite = [];
 var keyBlack = [];
 var gen_nums = [];
 var a = 12;
+var gameOver = false;
 
 function start() {
+	if (gameOver === true) {
+		location.reload();
+	}
 	console.log("Don't cheat");
 	document.getElementById("win-lose").style.animationName = "slide-up";
 	codeGenarator();
@@ -16,14 +20,14 @@ function start() {
 
 function up() {
 	document.getElementById("win-lose").style.animationName = "slide-up-little";
-	document.getElementsByTagName("i")[0].style.animationName = "slide-up-arrow";
+	document.getElementById("arrow").style.animationName = "slide-up-arrow";
 
 	setTimeout(function(){
 		document.getElementById("win-lose").style.top = "-90%";
 		document.getElementsByTagName("content")[0].style.display = "none";
-		document.getElementsByTagName("i")[0].style.top = "3%";
-		document.getElementsByTagName("i")[0].style.transform = "rotate(180deg)";
-		document.getElementById("win-lose").style.filter = "opacity(0.5)";
+		document.getElementById("arrow").style.top = "3%";
+		document.getElementById("arrow").style.transform = "rotate(180deg)";
+		document.getElementById("board").style.marginTop = "74px";
 	}, 1990);
 }
 
@@ -98,16 +102,27 @@ function colorInArray(n) {
 			document.getElementById("text").innerHTML = "YOU WIN!";
 			document.getElementById("win-lose").style.display = "block";
 			document.getElementById("win-lose").style.animationName = "slide-down";
-			document.getElementsByTagName("i")[0].style.display = "block";
+			document.getElementById("arrow").style.display = "block";
 			console.log("You Win!!");
+			gameOver = true;
+			for (var i = 0; i <= 3; i++) {
+				document.getElementById("pinR-" + i).style.backgroundColor = code[i];
+			}
+			document.getElementById("lineR").style.display = "flex";
+			document.getElementById("lineR").style.background = "none";
+			document.getElementById("lineR").style.width = "400px";
 		}
 		if (a == 1) {
 			if (keyBlack.length != 4) {
 				document.getElementById("text").innerHTML = "YOU LOSE!";
 				document.getElementById("win-lose").style.display = "block";
 				document.getElementById("win-lose").style.animationName = "slide-down";
-				document.getElementsByTagName("i")[0].style.display = "block";
+				document.getElementById("arrow").style.display = "block";
 				console.log("You Lose!!");
+				gameOver = true;
+				for (var i = 0; i <= 3; i++) {
+					document.getElementById("pinR-" + i).style.backgroundColor = code[i];
+				}
 			}
 		}
 		a--;

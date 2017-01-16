@@ -8,20 +8,22 @@
 	<script src="script.js" type="text/javascript"></script>
 	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 	<script src="https://use.fontawesome.com/38ac67d2bb.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<div id="win-lose">
 		<content>
 			<h1 id="text">Mastermind</h1>
 			<div class="line" id="lineR">
+				<p>The correct code was: </p>
 				<div class="pin" id="pinR-0"></div>
 				<div class="pin" id="pinR-1"></div>
 				<div class="pin" id="pinR-2"></div>
 				<div class="pin" id="pinR-3"></div>
 			</div>
-			<button onclick="start()">Start</button>
+			<button onclick="start()">Play</button>
 		</content>
-		<i onclick="up()" class="fa fa-arrow-up fa-2x" aria-hidden="true"></i>
+		<div id="arrow" onclick="up()"><i class="fa fa-arrow-up fa-2x" aria-hidden="true"></i></div>
 	</div>
 	<div id="board">
 		<div class="line" id="line1">
