@@ -29,7 +29,7 @@ function up() {
 			document.getElementById("win-lose").style.top = "0%";
 			document.getElementById("arrow").style.top = "94%";
 			document.getElementById("arrow").style.transform = "rotate(0deg)";
-	}, 1990);
+	}, 2000);
 		arrow = false;
 	}
 	else if (arrow === false) {
