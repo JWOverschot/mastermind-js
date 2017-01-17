@@ -124,6 +124,7 @@ function colorInArray(n) {
 			document.getElementById("win-lose").style.animationName = "slide-down";
 			document.getElementById("arrow").style.display = "block";
 			console.log("You Win!!");
+			document.getElementById("button").value = "Retry";
 			gameOver = true;
 			for (var i = 0; i <= 3; i++) {
 				document.getElementById("pinR-" + i).style.backgroundColor = code[i];
@@ -139,6 +140,7 @@ function colorInArray(n) {
 				document.getElementById("win-lose").style.animationName = "slide-down";
 				document.getElementById("arrow").style.display = "block";
 				console.log("You Lose!!");
+				document.getElementById("button").value = "Retry";
 				gameOver = true;
 				for (var i = 0; i <= 3; i++) {
 					document.getElementById("pinR-" + i).style.backgroundColor = code[i];

@@ -13,7 +13,7 @@ body {
 	z-index: 5;
 }
 
-#win-lose h1, #win-lose button, #win-lose #arrow {
+#win-lose h1, #win-lose #button, #win-lose #arrow {
 	position: fixed;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -23,11 +23,23 @@ body {
 	top: 50%;
 }
 
-#win-lose button {
+#win-lose #button {
 	top: 60%;
 	border: none;
 	outline: none;
 	font-family: 'Righteous', cursive;
+	height: 43px;
+	width: 100px;
+	font-size: x-large;
+}
+
+#win-lose #button:hover {
+	filter: invert(100%);
+}
+
+#win-lose #button:active {
+	filter: invert(100%);
+	color: #dddddd;
 }
 
 #win-lose #arrow {
@@ -74,8 +86,11 @@ body {
 .pin {
 	height: 50px;
 	width: 50px;
-	cursor: pointer;
 	margin-left: 5px;
+}
+
+#colors .pin, #delete, #button {
+	cursor: pointer;
 }
 
 .spin {
@@ -116,6 +131,10 @@ body {
 	height: 50px;
 	left: 66px;
 	top: 93%;
+}
+
+#delete:active {
+	filter: invert(50%);
 }
 
 @keyframes slide-down {
