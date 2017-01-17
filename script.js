@@ -46,6 +46,11 @@ function up() {
 	}
 }
 
+function removeColor() {
+	codePlayer.pop();
+	document.getElementById("pin"+ a +"-" + codePlayer.length).style.backgroundColor = "#737373";
+}
+
 function in_array(array, el) {
 	for(var i = 0; i < array.length; i++) 
 		if(array[i] == el) return true;
