@@ -1,48 +1,52 @@
 var code = [];
 var codePlayer = [];
-var keyWhite = [];
-var keyBlack = [];
 var gen_nums = [];
 var a = 12;
 var gameOver = false;
-var arrow = false;
+var arrowDetect = false;
 
 function start() {
+	var winLose = document.getElementById("win-lose").style;
 	if (gameOver === true) {
 		location.reload();
 	}
 	console.log("Don't cheat");
-	document.getElementById("win-lose").style.animationName = "slide-up";
+	winLose.animationName = "slide-up";
 	codeGenarator();
 	setTimeout(function(){
-		document.getElementById("win-lose").style.display = "none";
+		winLose.display = "none";
 	}, 1990);
 }
 
 function up() {
-	if (arrow === true) {
-		document.getElementById("win-lose").style.animationName = "slide-down-little";
-		document.getElementById("arrow").style.animationName = "slide-down-arrow";
-		document.getElementById("board").style.marginTop = "0px";
-		document.getElementsByTagName("content")[0].style.display = "block";
+	var winLose = document.getElementById("win-lose").style;
+	var arrow = document.getElementById("arrow").style;
+	var board = document.getElementById("board").style;
+	var content = document.getElementsByTagName("content");
+
+	if (arrowDetect === true) {
+		winLose.animationName = "slide-down-little";
+		arrow.animationName = "slide-down-arrow";
+		board.marginTop = "0px";
+		content[0].style.display = "block";
 		setTimeout(function() {
-			document.getElementById("win-lose").style.top = "0%";
-			document.getElementById("arrow").style.top = "94%";
-			document.getElementById("arrow").style.transform = "rotate(0deg)";
-	}, 2000);
-		arrow = false;
+			winLose.top = "0%";
+			arrow.top = "94%";
+			arrow.transform = "rotate(0deg)";
+		}, 2000);
+		arrowDetect = false;
 	}
-	else if (arrow === false) {
-		document.getElementById("win-lose").style.animationName = "slide-up-little";
-		document.getElementById("arrow").style.animationName = "slide-up-arrow";
+	else if (arrowDetect === false) {
+		winLose.animationName = "slide-up-little";
+		arrow.animationName = "slide-up-arrow";
 		setTimeout(function() {
-			document.getElementById("win-lose").style.top = "-90%";
-			document.getElementsByTagName("content")[0].style.display = "none";
-			document.getElementById("arrow").style.top = "3%";
-			document.getElementById("arrow").style.transform = "rotate(180deg)";
-			document.getElementById("board").style.marginTop = "74px";
+			winLose.top = "-90%";
+			content[0].style.display = "none";
+			arrow.top = "3%";
+			arrow.transform = "rotate(180deg)";
+			board.marginTop = "74px";
 		}, 1990);
-		arrow = true;
+		arrowDetect = true;
 	}
 }
 
@@ -75,6 +79,13 @@ function codeGenarator() {
 }
 
 function colorInArray(n) {
+	var winLose = document.getElementById("win-lose").style;
+	var arrow = document.getElementById("arrow").style;
+	var text = document.getElementById("text");
+	var button = document.getElementById("button");
+	var lineR = document.getElementById("lineR").style;
+	var keyWhite = [];
+	var keyBlack = [];
 	
 	if (codePlayer.length < 4) {
 		if (n == "red") {
@@ -119,40 +130,38 @@ function colorInArray(n) {
 			document.getElementById("spin"+ a +"-" + i).style.backgroundColor = keyBlack[i];
 		}
 		if (keyBlack.length == 4) {
-			document.getElementById("text").innerHTML = "YOU WIN!";
-			document.getElementById("win-lose").style.display = "block";
-			document.getElementById("win-lose").style.animationName = "slide-down";
-			document.getElementById("arrow").style.display = "block";
+			text.innerHTML = "YOU WIN!";
+			winLose.display = "block";
+			winLose.animationName = "slide-down";
+			arrow.display = "block";
 			console.log("You Win!!");
-			document.getElementById("button").value = "Retry";
+			button.value = "Retry";
 			gameOver = true;
 			for (var i = 0; i <= 3; i++) {
 				document.getElementById("pinR-" + i).style.backgroundColor = code[i];
 			}
-			document.getElementById("lineR").style.display = "flex";
-			document.getElementById("lineR").style.background = "none";
-			document.getElementById("lineR").style.width = "400px";
+			lineR.display = "flex";
+			lineR.background = "none";
+			lineR.width = "400px";
 		}
 		if (a == 1) {
 			if (keyBlack.length != 4) {
-				document.getElementById("text").innerHTML = "YOU LOSE!";
-				document.getElementById("win-lose").style.display = "block";
-				document.getElementById("win-lose").style.animationName = "slide-down";
-				document.getElementById("arrow").style.display = "block";
+				text.innerHTML = "YOU LOSE!";
+				winLose.display = "block";
+				winLose.animationName = "slide-down";
+				arrow.display = "block";
 				console.log("You Lose!!");
-				document.getElementById("button").value = "Retry";
+				button.value = "Retry";
 				gameOver = true;
 				for (var i = 0; i <= 3; i++) {
 					document.getElementById("pinR-" + i).style.backgroundColor = code[i];
 				}
-				document.getElementById("lineR").style.display = "flex";
-				document.getElementById("lineR").style.background = "none";
-				document.getElementById("lineR").style.width = "400px";
+				lineR.display = "flex";
+				lineR.background = "none";
+				lineR.width = "400px";
 			}
 		}
 		a--;
 		codePlayer = [];
-		keyWhite = [];
-		keyBlack = [];
 	}
 }
