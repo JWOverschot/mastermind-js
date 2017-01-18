@@ -33,18 +33,19 @@ function up() {
 			winLose.top = "0%";
 			arrow.top = "94%";
 			arrow.transform = "rotate(0deg)";
-		}, 2000);
+		}, 1990);
 		arrowDetect = false;
 	}
 	else if (arrowDetect === false) {
 		winLose.animationName = "slide-up-little";
 		arrow.animationName = "slide-up-arrow";
+		
 		setTimeout(function() {
 			winLose.top = "-90%";
-			content[0].style.display = "none";
 			arrow.top = "3%";
+			content[0].style.display = "none";
 			arrow.transform = "rotate(180deg)";
-			board.marginTop = "74px";
+			board.marginTop = "6.3%";
 		}, 1990);
 		arrowDetect = true;
 	}

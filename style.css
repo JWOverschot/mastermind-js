@@ -67,7 +67,7 @@ body {
 #colors {
 	position: absolute;
 	width: 6%;
-	top: 55%;
+	top: 47%;
 	z-index: 0;
 }
 
@@ -128,10 +128,8 @@ body {
 }
 
 #delete {
-	position: absolute;
-	height: 50px;
-	left: 66px;
-	top: 93%;
+	height: 47px;
+	margin-left: 6px;
 }
 
 #delete:active {
